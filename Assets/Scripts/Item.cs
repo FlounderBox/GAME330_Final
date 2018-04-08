@@ -1,0 +1,85 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+[RequireComponent(typeof(BoxCollider))]
+public class Item : MonoBehaviour {
+
+    public GameEvent EngulfedEvent;
+
+    public UnityEventFloat Response;
+
+    public enum ItemState
+    {
+        Idle,
+        Engulfed,
+    }
+
+    ItemState currentState;
+
+    public float Score
+    {
+        get
+        {
+            return CalculateScore(GetComponent<Collider>());
+        }
+    }
+
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public static float CalculateScore(Collider col)
+    {
+
+        return Mathf.Round(col.bounds.size.magnitude * 100)/100;
+        //return col.bounds.size.magnitude;
+    }
+
+    public static bool CanBeEngulfed(float src, float dest)
+    {
+        if (src > dest)
+            return true;
+        else
+            return false;
+    }
+
+    void ChangeState(ItemState newState)
+    {
+        currentState = newState;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (currentState != ItemState.Engulfed)
+        {
+            if (collision.collider.tag == "Player")
+            {
+                if (CanBeEngulfed(collision.collider.bounds.size.magnitude, Score))
+                {
+                    Debug.Log("Engfuled");
+                    ChangeState(ItemState.Engulfed);
+                    EngulfedEvent.Raise(Score);
+                    Response.Invoke(Score);
+                    //rb.isKinematic = true;
+                    //ChangeState(ItemState.Engulfed);
+                    //Vector3 localOffset = transform.position - collision.transform.position;
+                    //transform.parent = collision.transform;
+                    //transform.localPosition = localOffset;
+                }
+            }
+        }
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        SceneDebugText.drawString(Score.ToString(), transform.position, 0, 0, Color.blue);
+    }
+}
