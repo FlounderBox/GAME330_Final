@@ -16,13 +16,19 @@ public class SphereController : MonoBehaviour
         return Vector3.one * pScore / unitScore;
     }
 
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         //startingScale = transform.localScale;
         unitScore = Item.CalculateScore(GetComponent<SphereCollider>());
+        transform.localScale = GetScaleFromScore(Score);
+    }
 
-        Score = unitScore;
+    [ExecuteInEditMode]
+    void UpdateSize()
+    {
+        transform.localScale = GetScaleFromScore(Score);
     }
 
     void Update()
@@ -31,7 +37,6 @@ public class SphereController : MonoBehaviour
         float _inputY = Input.GetAxis("Vertical");
 
         rb.AddTorque(new Vector3(_inputX * Torque, 0, _inputY * Torque));
-        transform.localScale = GetScaleFromScore(Score);
     }
 
     private void OnDrawGizmos()
