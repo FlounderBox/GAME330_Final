@@ -35,7 +35,7 @@ public class SphereController : MonoBehaviour
         float _inputX = Input.GetAxis("Horizontal");
         float _inputY = Input.GetAxis("Vertical");
 
-        rb.AddTorque(new Vector3(_inputX * Torque, 0, _inputY * Torque));
+        rb.AddTorque(Camera.main.transform.TransformDirection(new Vector3(_inputY * Torque, 0, -_inputX * Torque)));
         UpdateSize();
     }
 
