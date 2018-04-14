@@ -13,7 +13,7 @@ public class SphereController : MonoBehaviour
 
     Vector3 GetScaleFromScore(float pScore)
     {
-        return Vector3.one * pScore / unitScore;
+            return Vector3.one * pScore/1;
     }
 
 
@@ -25,8 +25,7 @@ public class SphereController : MonoBehaviour
         transform.localScale = GetScaleFromScore(Score);
     }
 
-    [ExecuteInEditMode]
-    void UpdateSize()
+    public void UpdateSize()
     {
         transform.localScale = GetScaleFromScore(Score);
     }
@@ -37,6 +36,7 @@ public class SphereController : MonoBehaviour
         float _inputY = Input.GetAxis("Vertical");
 
         rb.AddTorque(new Vector3(_inputX * Torque, 0, _inputY * Torque));
+        UpdateSize();
     }
 
     private void OnDrawGizmos()
