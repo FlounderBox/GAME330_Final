@@ -1,24 +1,18 @@
 fileFormatVersion: 2
-guid: d48b63e0b88c9a04f974d759ac3a4d6a
-timeCreated: 1523463444
+guid: 654c31cd65ff6154dab543c11b6a9b0c
+timeCreated: 1523713019
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #26'
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box002
-    4300002: Box003
+    4300000: Box001
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Material #26'
-    second: {fileID: 2100000, guid: b9c09abdaa24ed64db643362a6abb81d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.416
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
