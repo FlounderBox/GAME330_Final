@@ -32,10 +32,21 @@ public class SphereController : MonoBehaviour
 
     void Update()
     {
-        float _inputX = Input.GetAxis("Horizontal");
-        float _inputY = Input.GetAxis("Vertical");
+        Vector3 _torque = Vector3.zero;
+        if (SimonXInterface.SimonXTransform != null)
+        {
+            Vector3 _difference = new Vector3((SimonXInterface.GetUpVector() - Vector3.up).x, (SimonXInterface.GetUpVector() - Vector3.up).z,0 );
+            Debug.Log(_difference);
+            _torque = new Vector3(-_difference.y, 0, _difference.x) * Torque;
+        }
+        else
+        {
+            float _inputX = Input.GetAxis("Horizontal");
+            float _inputY = Input.GetAxis("Vertical");
+            _torque = new Vector3(_inputY * Torque, 0, -_inputX * Torque);
+        }
 
-        rb.AddTorque(Camera.main.transform.TransformDirection(new Vector3(_inputY * Torque, 0, -_inputX * Torque)));
+        rb.AddTorque(Camera.main.transform.TransformDirection(_torque));
         UpdateSize();
     }
 

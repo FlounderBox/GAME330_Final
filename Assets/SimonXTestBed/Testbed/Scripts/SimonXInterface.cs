@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimonXInterface : MonoBehaviour {
+public class SimonXInterface : MonoBehaviour
+{
 
     public enum SimonButtonType
     {
@@ -15,20 +16,22 @@ public class SimonXInterface : MonoBehaviour {
     static bool[] SimonButtonPressed;
     static bool[] SimonButtonPressedLastFrame;
 
-    static Transform SimonXTransform;
+    public static Transform SimonXTransform;
 
     public SimonXControlScript TargetSimonX;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         SimonButtonPressed = new bool[System.Enum.GetValues(typeof(SimonButtonType)).Length];
         SimonButtonPressedLastFrame = new bool[System.Enum.GetValues(typeof(SimonButtonType)).Length];
 
         SimonXTransform = TargetSimonX.transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         UpdateButtonStateFromSimonX(SimonButtonType.Button_UL, 1);
         UpdateButtonStateFromSimonX(SimonButtonType.Button_UR, 0);
         UpdateButtonStateFromSimonX(SimonButtonType.Button_LL, 3);
@@ -42,7 +45,7 @@ public class SimonXInterface : MonoBehaviour {
         SimonButtonPressedLastFrame[(int)buttonType] = SimonButtonPressed[(int)buttonType];
         SimonButtonPressed[(int)buttonType] = TargetSimonX.IsButtonDepressed(buttonIndex);
     }
-        
+
     public static bool GetButton(SimonButtonType buttonType)
     {
         return SimonButtonPressed[(int)buttonType];
