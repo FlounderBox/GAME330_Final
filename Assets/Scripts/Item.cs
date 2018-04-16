@@ -66,6 +66,7 @@ public class Item : MonoBehaviour {
                     ChangeState(ItemState.Engulfed);
                     EngulfedEvent.Raise(Score);
                     Response.Invoke(Score);
+                    gameObject.SetActive(false);
                     //rb.isKinematic = true;
                     //ChangeState(ItemState.Engulfed);
                     //Vector3 localOffset = transform.position - collision.transform.position;

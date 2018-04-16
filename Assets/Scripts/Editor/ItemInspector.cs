@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(Item))]
+[CanEditMultipleObjects]
 public class ItemInspector : Editor {
     public override void OnInspectorGUI()
     {
