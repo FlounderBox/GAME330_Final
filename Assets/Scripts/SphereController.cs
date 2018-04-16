@@ -36,7 +36,6 @@ public class SphereController : MonoBehaviour
         if (SimonXInterface.SimonXTransform != null)
         {
             Vector3 _difference = new Vector3((SimonXInterface.GetUpVector() - Vector3.up).x, (SimonXInterface.GetUpVector() - Vector3.up).z,0 );
-            Debug.Log(_difference);
             _torque = new Vector3(-_difference.y, 0, _difference.x) * Torque;
         }
         else

@@ -87,8 +87,6 @@ GameObject:
   - component: {fileID: 4148973601641908}
   - component: {fileID: 20959889597143334}
   - component: {fileID: 124665527682788150}
-  - component: {fileID: 81527456102780042}
-  - component: {fileID: 114879839843275530}
   m_Layer: 8
   m_Name: TestbedCamera
   m_TagString: Untagged
@@ -434,13 +432,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!81 &81527456102780042
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1531177874901928}
-  m_Enabled: 1
 --- !u!95 &95552671992063824
 Animator:
   serializedVersion: 3
@@ -518,17 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TiltRate: 8
---- !u!114 &114879839843275530
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1531177874901928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124665527682788150
 Behaviour:
   m_ObjectHideFlags: 1
