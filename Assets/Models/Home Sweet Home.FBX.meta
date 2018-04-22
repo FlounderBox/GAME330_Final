@@ -1,55 +1,22 @@
 fileFormatVersion: 2
-guid: 50c513bd9b5ee9347a74e8ee448f3397
-timeCreated: 1523838329
+guid: e5bff25a4590f9848a56e2fc67a22cf7
+timeCreated: 1524320830
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Line001
-    100002: Line002
-    100004: Line002 1
-    100006: Line003
-    100008: Oven Door
-    100010: //RootNode
-    100012: Stove!
-    100014: Oven
-    400000: Line001
-    400002: Line002
-    400004: Line002 1
-    400006: Line003
-    400008: Oven Door
-    400010: //RootNode
-    400012: Stove!
-    400014: Oven
-    2100000: 'Material #2'
-    2300000: Line001
-    2300002: Line002
-    2300004: Line002 1
-    2300006: Line003
-    2300008: Oven Door
-    2300010: Stove!
-    2300012: Oven
-    3300000: Line001
-    3300002: Line002
-    3300004: Line002 1
-    3300006: Line003
-    3300008: Oven Door
-    3300010: Stove!
-    3300012: Oven
-    4300000: Stove!
-    4300002: Oven Door
-    4300004: Line001
-    4300006: Line002
-    4300008: Line002
-    4300010: Line003
-    4300012: Oven
-    7400000: Take 001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #3'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: House
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #2'
+      name: 'Material #3'
     second: {fileID: 2100000, guid: b9c09abdaa24ed64db643362a6abb81d, type: 2}
   materials:
     importMaterials: 1
