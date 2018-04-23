@@ -9,10 +9,12 @@ public class JellyController : MonoBehaviour {
     public float ScalePercentage = 0.01f;
 
     private JellyMesh jelly;
+    float UnitScore;
 
     private void Awake()
     {
         jelly = GetComponent<JellyMesh>();
+        UnitScore = 1;
         UpdateSize();
     }
 
@@ -49,15 +51,16 @@ public class JellyController : MonoBehaviour {
         Debug.DrawLine(transform.position, _torque);
 
         
-        //UpdateSize();
+        UpdateSize();
 
     }
 
     void UpdateSize()
     {
         //NEEDS RATIO
-        Debug.Log(Score / 100 + 1);
-        jelly.Scale(Score / 100 + 1);
+        Debug.Log(Score / UnitScore);
+        jelly.Scale(Score /UnitScore);
+        UnitScore = Score;
     }
 
     public void AddToScore(float f)
