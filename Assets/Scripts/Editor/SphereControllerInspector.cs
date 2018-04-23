@@ -20,3 +20,22 @@ public class SphereControllerInspector : Editor {
         DrawDefaultInspector();
     }
 }
+
+[CustomEditor(typeof(BlobController))]
+public class BlobControllerInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        //base.OnInspectorGUI();
+        BlobController myTarget = (BlobController)target;
+
+        if (GUILayout.Button("Set Scale From Score"))
+        {
+            myTarget.UpdateSize();
+        }
+        //EditorGUILayout.LabelField("Item Score: ", myTarget.Score.ToString());
+        //EditorGUILayout.LabelField("EngulfScore: ", myTarget.Score.ToString());
+
+        DrawDefaultInspector();
+    }
+}

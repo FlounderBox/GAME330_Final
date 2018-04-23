@@ -54,13 +54,14 @@ public class Item : MonoBehaviour {
         currentState = newState;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (currentState != ItemState.Engulfed)
         {
-            if (collision.collider.tag == "Player")
+            Debug.Log(collision.tag);
+            if (collision.tag == "Player")
             {
-                if (CanBeEngulfed(collision.collider.bounds.size.magnitude, Score))
+                if (CanBeEngulfed(collision.GetComponent<BlobController>().Score, Score))
                 {
                     Debug.Log("Engfuled");
                     ChangeState(ItemState.Engulfed);

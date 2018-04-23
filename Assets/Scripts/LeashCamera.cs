@@ -26,4 +26,9 @@ public class LeashCamera : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetCamPos, 0.4f * Time.deltaTime);
         transform.LookAt(Target.transform);
     }
+
+    public void AddLength(float f)
+    {
+        //LeashLength += f/8;
+    }
 }
