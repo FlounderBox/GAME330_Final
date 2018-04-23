@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23934474746693050}
   - component: {fileID: 114100420866223228}
   - component: {fileID: 114320600653135988}
+  - component: {fileID: 114800097410403136}
   m_Layer: 0
   m_Name: JellyController
   m_TagString: Player
@@ -103,9 +104,9 @@ MonoBehaviour:
   m_SourceMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_PhysicsMaterial: {fileID: 0}
   m_PhysicsMaterial2D: {fileID: 0}
-  m_Interpolation: 0
+  m_Interpolation: 2
   m_Interpolation2D: 0
-  m_CollisionDetectionMode: 1
+  m_CollisionDetectionMode: 2
   m_CollisionDetectionMode2D: 0
   m_VertexDensity: 10
   m_SphereRadius: 0.078
@@ -148,5 +149,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Torque: 250
-  Score: 0.5
-  ScalePercentage: 0.01
+  Score: 0.22
+  ScalePercentage: 0.05
+--- !u!114 &114800097410403136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153147765028204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d27198083d8954ab3ad0f2bdcb468d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2ab590dc1289f4045ad2ddaf8bbdcf00, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ResponseFloat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114320600653135988}
+        m_MethodName: AddToScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
