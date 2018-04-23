@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 [System.Serializable]
 [RequireComponent(typeof(Collider))]
-public class Item : MonoBehaviour {
+public class Item : MonoBehaviour
+{
 
     public GameEvent EngulfedEvent;
 
@@ -37,7 +38,7 @@ public class Item : MonoBehaviour {
     public static float CalculateScore(Collider col)
     {
 
-        return Mathf.Round(col.bounds.size.magnitude * 100)/100;
+        return Mathf.Round(col.bounds.size.magnitude * 100) / 100;
         //return col.bounds.size.magnitude;
     }
 
@@ -54,26 +55,21 @@ public class Item : MonoBehaviour {
         currentState = newState;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    public void Engulf(Collision collision)
     {
         if (currentState != ItemState.Engulfed)
         {
-            Debug.Log(collision.tag);
-            if (collision.tag == "Player")
             {
-                if (CanBeEngulfed(collision.GetComponent<BlobController>().Score, Score))
-                {
-                    Debug.Log("Engfuled");
-                    ChangeState(ItemState.Engulfed);
-                    EngulfedEvent.Raise(Score);
-                    Response.Invoke(Score);
-                    gameObject.SetActive(false);
-                    //rb.isKinematic = true;
-                    //ChangeState(ItemState.Engulfed);
-                    //Vector3 localOffset = transform.position - collision.transform.position;
-                    //transform.parent = collision.transform;
-                    //transform.localPosition = localOffset;
-                }
+                Debug.Log("Engfuled");
+                ChangeState(ItemState.Engulfed);
+                EngulfedEvent.Raise(Score);
+                Response.Invoke(Score);
+                gameObject.SetActive(false);
+                //rb.isKinematic = true;
+                //ChangeState(ItemState.Engulfed);
+                //Vector3 localOffset = transform.position - collision.transform.position;
+                //transform.parent = collision.transform;
+                //transform.localPosition = localOffset;
             }
         }
     }

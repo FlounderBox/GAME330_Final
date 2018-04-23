@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33559064037008242}
   - component: {fileID: 23360213595776154}
   - component: {fileID: 95975588569440464}
-  - component: {fileID: 64082227037607900}
   - component: {fileID: 114928531829267382}
+  - component: {fileID: 136018934912817984}
   m_Layer: 0
   m_Name: Bowl
   m_TagString: Untagged
@@ -85,20 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656178882800336}
   m_Mesh: {fileID: 4300000, guid: f172a5edaf242a644ab416139e4978a8, type: 3}
---- !u!64 &64082227037607900
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1656178882800336}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f172a5edaf242a644ab416139e4978a8, type: 3}
 --- !u!95 &95975588569440464
 Animator:
   serializedVersion: 3
@@ -133,3 +119,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!136 &136018934912817984
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656178882800336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.40606332
+  m_Height: 0.8775445
+  m_Direction: 1
+  m_Center: {x: -0.000047042966, y: 0.0010647925, z: -0.0015328977}

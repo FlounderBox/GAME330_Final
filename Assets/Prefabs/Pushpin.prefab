@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33046675084933322}
   - component: {fileID: 23812927090409816}
   - component: {fileID: 95111270827429548}
-  - component: {fileID: 64031958317236056}
   - component: {fileID: 114244723610780564}
+  - component: {fileID: 65115715268613676}
   m_Layer: 0
   m_Name: Pushpin
   m_TagString: Untagged
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332674245690018}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -27.526913, y: -2.8660002, z: -358.25003}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -32.27935, y: -3.8660002, z: -357.02582}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,8 +85,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332674245690018}
   m_Mesh: {fileID: 4300002, guid: b2e894b740fdbbe438753aa56901359f, type: 3}
---- !u!64 &64031958317236056
-MeshCollider:
+--- !u!65 &65115715268613676
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -94,11 +94,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: b2e894b740fdbbe438753aa56901359f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.11353507, y: 0.11181024, z: 0.0881565}
+  m_Center: {x: -0.000000004967054, y: -1.2232665e-16, z: 0.044078246}
 --- !u!95 &95111270827429548
 Animator:
   serializedVersion: 3

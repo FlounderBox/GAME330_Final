@@ -61,4 +61,13 @@ public class SphereController : MonoBehaviour
         //transform.localScale = startingScale * scaleMod;
         Score += f * ScalePercentage;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.GetComponent<Item>())
+        {
+            if (Item.CanBeEngulfed(Score, collision.transform.GetComponent<Item>().Score))
+                collision.transform.GetComponent<Item>().Engulf(collision);
+        }
+    }
 }

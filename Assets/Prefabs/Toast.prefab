@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33196543102239650}
   - component: {fileID: 23776891764698850}
   - component: {fileID: 95496096153705588}
-  - component: {fileID: 64952321505208956}
   - component: {fileID: 114092554633841028}
+  - component: {fileID: 65502872926162350}
   m_Layer: 0
   m_Name: Toast
   m_TagString: Untagged
@@ -85,8 +85,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1425347856234018}
   m_Mesh: {fileID: 4300000, guid: 7a1cfc97ff8478d4d87e761adf89f9a2, type: 3}
---- !u!64 &64952321505208956
-MeshCollider:
+--- !u!65 &65502872926162350
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -94,11 +94,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 7a1cfc97ff8478d4d87e761adf89f9a2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.51, z: 0.037807643}
+  m_Center: {x: 0, y: 0.035418518, z: 0.009832051}
 --- !u!95 &95496096153705588
 Animator:
   serializedVersion: 3

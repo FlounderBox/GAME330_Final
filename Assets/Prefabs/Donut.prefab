@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33711196394338158}
   - component: {fileID: 23598272545208598}
   - component: {fileID: 95663063508739848}
-  - component: {fileID: 64308338542602510}
   - component: {fileID: 114334856203782212}
+  - component: {fileID: 136529796705745010}
   m_Layer: 0
   m_Name: Donut
   m_TagString: Untagged
@@ -85,20 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484692736995002}
   m_Mesh: {fileID: 4300000, guid: a98d792b9bf30d1489133a5ad0cec6bb, type: 3}
---- !u!64 &64308338542602510
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1484692736995002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: a98d792b9bf30d1489133a5ad0cec6bb, type: 3}
 --- !u!95 &95663063508739848
 Animator:
   serializedVersion: 3
@@ -133,3 +119,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!136 &136529796705745010
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484692736995002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

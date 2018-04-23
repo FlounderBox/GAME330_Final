@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33454853425428208}
   - component: {fileID: 23564289954128950}
   - component: {fileID: 95641010078768364}
-  - component: {fileID: 64662962242791832}
   - component: {fileID: 114088971123384222}
+  - component: {fileID: 136759294447637674}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -85,20 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191980593671782}
   m_Mesh: {fileID: 4300002, guid: d1ba31c201ebd724f9b18d82a56bdab7, type: 3}
---- !u!64 &64662962242791832
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191980593671782}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: d1ba31c201ebd724f9b18d82a56bdab7, type: 3}
 --- !u!95 &95641010078768364
 Animator:
   serializedVersion: 3
@@ -133,3 +119,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!136 &136759294447637674
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191980593671782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.10219863
+  m_Height: 0.1480614
+  m_Direction: 1
+  m_Center: {x: -0.025066134, y: 0, z: 0}
