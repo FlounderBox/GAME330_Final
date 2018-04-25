@@ -25,7 +25,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     10800000: Sky001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #61'
+    second: {fileID: 2100000, guid: 1ec5c066d75abe04fa70b3ef2ac224a7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -31,6 +31,8 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: Fan
+    13700002: Fan001
+    13700004: Fan002
   externalObjects:
   - first:
       type: UnityEngine:Material
