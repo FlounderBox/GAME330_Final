@@ -64,7 +64,8 @@ public class Item : MonoBehaviour
                 ChangeState(ItemState.Engulfed);
                 EngulfedEvent.Raise(Score);
                 Response.Invoke(Score);
-                gameObject.SetActive(false);
+                HideItem();
+                //gameObject.SetActive(false);
                 //rb.isKinematic = true;
                 //ChangeState(ItemState.Engulfed);
                 //Vector3 localOffset = transform.position - collision.transform.position;
@@ -74,7 +75,11 @@ public class Item : MonoBehaviour
         }
     }
 
-
+    private void HideItem()
+    {
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+    }
 
     private void OnDrawGizmos()
     {
