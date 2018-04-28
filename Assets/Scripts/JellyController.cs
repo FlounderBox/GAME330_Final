@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JellyController : MonoBehaviour {
+public class JellyController : MonoBehaviour
+{
 
     public float Torque;
     public float Score;
     public float ScalePercentage = 0.01f;
+    public float BreakForce = 50;
 
     private JellyMesh jelly;
+    private Transform eyeTransform;
+    private Vector3 prevEyeRotation;
     float UnitScore;
 
     private void Start()
     {
         jelly = GetComponent<JellyMesh>();
+        eyeTransform = transform.Find("Eyes");
+        eyeTransform.parent = null;
         UnitScore = 1;
         UpdateSize();
     }
@@ -25,9 +31,21 @@ public class JellyController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        foreach (JellyMesh.ReferencePoint j in jelly.ReferencePoints)
         {
-            //jelly.Scale(transform.localScale.x + 0.25f);
+
+            if (j.GameObject.GetComponent<SpringJoint>() != null)
+            {
+                if (j.GameObject.GetComponent<SpringJoint>().currentForce.magnitude > BreakForce)
+                {
+                    //Debug.Log(j.GameObject.GetComponent<SpringJoint>().currentForce.magnitude);
+                    j.Collider.enabled = false;
+                }
+                else
+                {
+                    j.Collider.enabled = true;
+                }
+            }
         }
     }
 
@@ -46,19 +64,28 @@ public class JellyController : MonoBehaviour {
             _torque = new Vector3(_inputY * Torque, 0, -_inputX * Torque);
         }
 
-        jelly.AddTorque(Camera.main.transform.TransformDirection(_torque), true);
-        //jelly.AddForce(Camera.main.transform.TransformDirection(_torque), false)
-        Debug.DrawLine(transform.position, _torque);
+        if (eyeTransform != null)
+        {
+            //Debug.DrawRay(transform.position, prevEyeRotation, Color.red);
+            eyeTransform.position = transform.position;
+            eyeTransform.localScale = transform.localScale;
+            if (_torque != Vector3.zero)
+            {
+                eyeTransform.rotation = Quaternion.LookRotation(prevEyeRotation);
+            }
+            prevEyeRotation = Camera.main.transform.TransformDirection(transform.position - (transform.position + new Vector3(-Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical")) * 2));
+        }
 
-        
+        jelly.AddTorque(Camera.main.transform.TransformDirection(_torque), true);
+
+
         UpdateSize();
 
     }
 
     void UpdateSize()
     {
-        //NEEDS RATIO
-        jelly.Scale(Score /UnitScore);
+        jelly.Scale(Score / UnitScore);
         UnitScore = Score;
     }
 
@@ -66,6 +93,7 @@ public class JellyController : MonoBehaviour {
     {
         Score += f * ScalePercentage;
         UpdateSize();
+        BreakForce += f * 5;
     }
 
     void OnJellyCollisionEnter(JellyMesh.JellyCollision collision)

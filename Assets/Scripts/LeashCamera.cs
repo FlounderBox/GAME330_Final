@@ -29,6 +29,6 @@ public class LeashCamera : MonoBehaviour
 
     public void AddLength(float f)
     {
-        //LeashLength += f/8;
+        LeashLength += f * 0.125f;
     }
 }
