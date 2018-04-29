@@ -20,6 +20,7 @@ public class GameEvent : ScriptableObject {
     {
         for (int i = 0; i < gameEventListeners.Count; i++)
         {
+            gameEventListeners[i].Invoke();
             gameEventListeners[i].Invoke(f);
         }
     }
