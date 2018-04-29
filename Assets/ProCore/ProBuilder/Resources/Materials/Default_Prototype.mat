@@ -89,6 +89,8 @@ Material:
     - _EmissionScaleUI: 0
     - _Gloss: 0.5
     - _Glossiness: 0.48
+    - _HighlightLength: 0.2952151
+    - _HighlightOpacity: 1
     - _Lightmapping: 1
     - _Metallic: 0
     - _Mode: 0
@@ -106,9 +108,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0.67910445, g: 0.67910445, b: 0.67910445, a: 1}
     - _Color2: {r: 0.14179105, g: 0.14179105, b: 0.14179105, a: 1}
+    - _ColorMultiplier: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _Indicator: {r: 1, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 0.36548442, g: 0.38022012, b: 0.47794116, a: 1}
     - _SpecularColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

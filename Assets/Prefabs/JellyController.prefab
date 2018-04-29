@@ -254,7 +254,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_VertexDensity: 10
   m_SphereRadius: 0.078
   m_DistanceExponent: 2
-  m_Stiffness: 500
+  m_Stiffness: 1500
   m_Mass: 1
   m_LockRotationX: 0
   m_LockRotationY: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   Torque: 250
   Score: 0.22
   ScalePercentage: 0.05
-  BreakForce: 50
+  BreakForce: 65
 --- !u!114 &114800097410403136
 MonoBehaviour:
   m_ObjectHideFlags: 1

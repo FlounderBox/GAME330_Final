@@ -15,6 +15,8 @@ public class JellyController : MonoBehaviour
     private Vector3 prevEyeRotation;
     float UnitScore;
 
+    bool controllable = true;
+
     private void Start()
     {
         jelly = GetComponent<JellyMesh>();
@@ -29,8 +31,21 @@ public class JellyController : MonoBehaviour
         return (pScore / 1f);
     }
 
+    public void EnableControls(bool pBool)
+    {
+        if (pBool)
+            controllable = true;
+        else
+            controllable = false;
+    }
+
     private void Update()
     {
+        RotateEyes();
+        if (controllable)
+        {
+            Movement();
+        }
         foreach (JellyMesh.ReferencePoint j in jelly.ReferencePoints)
         {
 
@@ -51,7 +66,13 @@ public class JellyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 _torque = Vector3.zero;
+        
+        UpdateSize();
+    }
+
+    Vector3 GetInputVector()
+    {
+        Vector3 _inputVector = Vector3.zero;
 
         float _inputX;
         float _inputY;
@@ -60,40 +81,41 @@ public class JellyController : MonoBehaviour
             _inputX = (SimonXInterface.GetUpVector() - Vector3.up).x;
             _inputY = (SimonXInterface.GetUpVector() - Vector3.up).z;
             Vector3 _difference = new Vector3(_inputX, _inputY, 0);
-            _torque = new Vector3(-_difference.y, 0, _difference.x) * Torque;
+            _inputVector = new Vector3(-_difference.y, 0, _difference.x) * Torque;
         }
         else
         {
             _inputX = Input.GetAxis("Horizontal");
             _inputY = Input.GetAxis("Vertical");
-            _torque = new Vector3(_inputY * Torque, 0, -_inputX * Torque);
+            _inputVector = new Vector3(_inputY * Torque, 0, -_inputX * Torque);
         }
+        return _inputVector;
+    }
 
-        if (eyeTransform != null)
-        {
-            //Debug.DrawRay(transform.position, prevEyeRotation, Color.red);
-            eyeTransform.position = transform.position;
-            eyeTransform.localScale = transform.localScale;
-            if (_torque != Vector3.zero)
-            {
-                eyeTransform.rotation = Quaternion.Slerp(eyeTransform.rotation, Quaternion.LookRotation(prevEyeRotation), Time.deltaTime * 10);
-            }
-            prevEyeRotation = Camera.main.transform.TransformDirection(transform.position - (transform.position + new Vector3(_inputX, 0, _inputY) * 2));
-        }
-
-        //jelly.AddTorque(Camera.main.transform.TransformDirection(_torque), true);
-        Vector3 _torqueCameraDirection = Camera.main.transform.TransformDirection(_torque);
+    void Movement()
+    {
+        Vector3 _torqueCameraDirection = Camera.main.transform.TransformDirection(GetInputVector());
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            //_torqueCameraDirection.;
+
         }
-        Debug.DrawRay(transform.position, _torqueCameraDirection * 2, Color.red);
         jelly.AddTorque(Vector3.ProjectOnPlane(_torqueCameraDirection, hit.normal), true);
+    }
 
+    void RotateEyes()
+    {
+        if (eyeTransform != null)
+        {
+            eyeTransform.position = transform.position;
+            eyeTransform.localScale = transform.localScale;
 
-        UpdateSize();
-
+            if (GetInputVector() != Vector3.zero)
+            {
+                eyeTransform.rotation = Quaternion.Slerp(eyeTransform.rotation, Quaternion.LookRotation(prevEyeRotation), Time.deltaTime * 10);
+            }
+            prevEyeRotation = Camera.main.transform.TransformDirection(transform.position - (transform.position + new Vector3(-Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical")) * 2));
+        }
     }
 
     void UpdateSize()
