@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114100420866223228}
   - component: {fileID: 114320600653135988}
   - component: {fileID: 114800097410403136}
+  - component: {fileID: 114870911478250188}
   - component: {fileID: 82419506145274424}
   m_Layer: 0
   m_Name: JellyController
@@ -196,9 +197,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29e358170bdfcb64caece7b583d791ac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -349,13 +350,12 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82419506145274424}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
+      - m_Target: {fileID: 114870911478250188}
+        m_MethodName: PlayRandomBloop
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 29e358170bdfcb64caece7b583d791ac,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -379,3 +379,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114870911478250188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153147765028204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9282b4625512a4ea947899bfb9855a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 82419506145274424}
+  clip1: {fileID: 8300000, guid: 29e358170bdfcb64caece7b583d791ac, type: 3}
+  clip2: {fileID: 8300000, guid: 546c99c392560cc48961f20dd9daddf2, type: 3}
+  clip3: {fileID: 8300000, guid: 38695fa0005c1604c8b5d0e739156d2c, type: 3}
