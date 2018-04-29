@@ -52,15 +52,20 @@ public class JellyController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 _torque = Vector3.zero;
+
+        float _inputX;
+        float _inputY;
         if (SimonXInterface.SimonXTransform != null)
         {
-            Vector3 _difference = new Vector3((SimonXInterface.GetUpVector() - Vector3.up).x, (SimonXInterface.GetUpVector() - Vector3.up).z, 0);
+            _inputX = (SimonXInterface.GetUpVector() - Vector3.up).x;
+            _inputY = (SimonXInterface.GetUpVector() - Vector3.up).z;
+            Vector3 _difference = new Vector3(_inputX, _inputY, 0);
             _torque = new Vector3(-_difference.y, 0, _difference.x) * Torque;
         }
         else
         {
-            float _inputX = Input.GetAxis("Horizontal");
-            float _inputY = Input.GetAxis("Vertical");
+            _inputX = Input.GetAxis("Horizontal");
+            _inputY = Input.GetAxis("Vertical");
             _torque = new Vector3(_inputY * Torque, 0, -_inputX * Torque);
         }
 
@@ -71,12 +76,20 @@ public class JellyController : MonoBehaviour
             eyeTransform.localScale = transform.localScale;
             if (_torque != Vector3.zero)
             {
-                eyeTransform.rotation = Quaternion.LookRotation(prevEyeRotation);
+                eyeTransform.rotation = Quaternion.Slerp(eyeTransform.rotation, Quaternion.LookRotation(prevEyeRotation), Time.deltaTime * 10);
             }
-            prevEyeRotation = Camera.main.transform.TransformDirection(transform.position - (transform.position + new Vector3(-Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical")) * 2));
+            prevEyeRotation = Camera.main.transform.TransformDirection(transform.position - (transform.position + new Vector3(_inputX, 0, _inputY) * 2));
         }
 
-        jelly.AddTorque(Camera.main.transform.TransformDirection(_torque), true);
+        //jelly.AddTorque(Camera.main.transform.TransformDirection(_torque), true);
+        Vector3 _torqueCameraDirection = Camera.main.transform.TransformDirection(_torque);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            //_torqueCameraDirection.;
+        }
+        Debug.DrawRay(transform.position, _torqueCameraDirection * 2, Color.red);
+        jelly.AddTorque(Vector3.ProjectOnPlane(_torqueCameraDirection, hit.normal), true);
 
 
         UpdateSize();
