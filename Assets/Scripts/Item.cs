@@ -60,7 +60,6 @@ public class Item : MonoBehaviour
         if (currentState != ItemState.Engulfed)
         {
             {
-                Debug.Log("Engfuled");
                 ChangeState(ItemState.Engulfed);
                 EngulfedEvent.Raise(Score);
                 Response.Invoke(Score);
