@@ -95,11 +95,14 @@ public class JellyController : MonoBehaviour
     void Movement()
     {
         Vector3 _torqueCameraDirection = Camera.main.transform.TransformDirection(GetInputVector());
+
+        //Vector3 _torqueCameraDirection = Camera.main.trans
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
 
         }
+        Debug.DrawRay(transform.position, Camera.main.transform.InverseTransformDirection(GetInputVector()));
         jelly.AddTorque(Vector3.ProjectOnPlane(_torqueCameraDirection, hit.normal), true);
     }
 
