@@ -69,11 +69,11 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      focusDistance: 1.55
-      aperture: 7.65
-      focalLength: 52
+      focusDistance: 1.0122488
+      aperture: 18.1
+      focalLength: 64
       useCameraFov: 0
       kernelSize: 0
   motionBlur:

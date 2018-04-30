@@ -5,18 +5,24 @@ using UnityEngine.PostProcessing;
 
 public class LeashCamera : MonoBehaviour
 {
-
+    public PostProcessingProfile postProcessing;
     public Transform Target;
     public float LeashLength = 5;
 
 
     private void Start()
     {
-
+        postProcessing = GetComponent<PostProcessingBehaviour>().profile;
     }
 
     private void Update()
     {
+        if (postProcessing != null)
+        {
+            var _dof = postProcessing.depthOfField.settings;
+            _dof.focusDistance = Vector3.Distance(transform.position, Target.transform.position);
+            postProcessing.depthOfField.settings = _dof;
+        }
 
         Vector3 targetCamPos = transform.position;
 
