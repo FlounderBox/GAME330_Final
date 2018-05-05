@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153147765028204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.102608, y: 1.048, z: -42.85}
+  m_LocalPosition: {x: -27.133535, y: -2.8, z: -356.94067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479727617405658}
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_SourceMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_PhysicsMaterial: {fileID: 0}
   m_PhysicsMaterial2D: {fileID: 0}
-  m_Interpolation: 2
+  m_Interpolation: 1
   m_Interpolation2D: 0
   m_CollisionDetectionMode: 2
   m_CollisionDetectionMode2D: 0
@@ -280,12 +280,12 @@ MonoBehaviour:
   m_LockPositionZ: 0
   m_GravityScale: 1
   m_UseGravity: 1
-  m_CollideConnected: 1
+  m_CollideConnected: 0
   m_CentralBodyKinematic: 0
   m_Drag: 0
   m_AngularDrag: 0.05
   m_RadiusPoints: 4
-  m_DampingRatio: 0
+  m_DampingRatio: 5
   m_SoftBodyScale: {x: 1, y: 1, z: 1}
   m_SoftBodyOffset: {x: 0, y: 0, z: 0}
   m_SoftBodyPivotOffset: {x: 0, y: 0, z: 0}
@@ -335,6 +335,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Chew
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114870911478250188}
+        m_MethodName: PlayRandomBloop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
