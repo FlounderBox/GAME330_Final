@@ -6535,68 +6535,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalPosition.x
       value: -54.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalPosition.y
       value: 2.8370657
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalPosition.z
       value: -237.4
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4877903143060716, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    - target: {fileID: 4624772712105148, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 1531177874901928, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1188541750849248, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
+      propertyPath: m_Name
+      value: TestbedAndWatch
       objectReference: {fileID: 0}
-    - target: {fileID: 20959889597143334, guid: 4897ac18e35a18241bb265de4375bfec,
-        type: 2}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 20959889597143334, guid: 4897ac18e35a18241bb265de4375bfec,
-        type: 2}
-      propertyPath: field of view
-      value: 38.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114713144670438132, guid: 4897ac18e35a18241bb265de4375bfec,
-        type: 2}
-      propertyPath: TiltRate
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295991156477416, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1531177874901928, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114879839843275530, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 4897ac18e35a18241bb265de4375bfec, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5c7b00dfaa6be894da63d9d258359a39, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1085634216
 Prefab:
@@ -8841,6 +8817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e088c227797b854d835c8698356fd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  postProcessing: {fileID: 0}
   Target: {fileID: 373865318}
   LeashLength: 1
 --- !u!114 &1634833030

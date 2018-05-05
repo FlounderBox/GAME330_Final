@@ -7,7 +7,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Item : MonoBehaviour
 {
-
     public GameEvent EngulfedEvent;
 
     public UnityEventFloat Response;
