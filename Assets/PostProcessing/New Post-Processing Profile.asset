@@ -71,9 +71,9 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 1
     m_Settings:
-      focusDistance: 1.0122488
+      focusDistance: 1.5864758
       aperture: 18.1
-      focalLength: 64
+      focalLength: 56.9
       useCameraFov: 0
       kernelSize: 0
   motionBlur:
@@ -121,20 +121,20 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: 15
-        tint: 4
+        temperature: 27.6
+        tint: 0
         hueShift: 0
         saturation: 1
-        contrast: 1.2
+        contrast: 1.1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
-        currentEditingChannel: 0
+        currentEditingChannel: 2
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 1, g: 0.6700635, b: 0.9843552, a: 0}
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
