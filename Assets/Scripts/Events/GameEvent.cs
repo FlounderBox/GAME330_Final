@@ -25,6 +25,25 @@ public class GameEvent : ScriptableObject {
         }
     }
 
+    public void Raise(Sprite s)
+    {
+        for (int i = 0; i < gameEventListeners.Count; i++)
+        {
+            gameEventListeners[i].Invoke();
+            gameEventListeners[i].Invoke(s);
+        }
+    }
+
+    public void Raise(float f, Sprite s)
+    {
+        for (int i = 0; i < gameEventListeners.Count; i++)
+        {
+            gameEventListeners[i].Invoke();
+            gameEventListeners[i].Invoke(f);
+            gameEventListeners[i].Invoke(s);
+        }
+    }
+
     //When an object with the GameEventListener component is created, it adds itself to gameEventListeners
     public void RegisterListener(GameEventListener listener)
     {

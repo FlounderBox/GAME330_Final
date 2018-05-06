@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Item : MonoBehaviour
 {
+    public Sprite EngulfImage;
     public GameEvent EngulfedEvent;
 
     public UnityEventFloat Response;
@@ -60,7 +61,7 @@ public class Item : MonoBehaviour
         {
             {
                 ChangeState(ItemState.Engulfed);
-                EngulfedEvent.Raise(Score);
+                EngulfedEvent.Raise(Score, EngulfImage);
                 Response.Invoke(Score);
                 HideItem();
                 //gameObject.SetActive(false);

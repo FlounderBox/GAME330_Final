@@ -9,6 +9,7 @@ public class GameEventListener : MonoBehaviour {
     //UnityEvent is used to display the event gui in the inspector
     public UnityEvent Response;
     public UnityEventFloat ResponseFloat;
+    public UnityEventSprite ResponseSprite;
 
     private void OnEnable()
     {
@@ -30,5 +31,17 @@ public class GameEventListener : MonoBehaviour {
     public void Invoke(float f)
     {
         ResponseFloat.Invoke(f);
+    }
+
+    public void Invoke(Sprite s)
+    {
+        ResponseSprite.Invoke(s);
+    }
+
+    public void Invoke (float f, Sprite s)
+    {
+        Invoke(f);
+        Invoke(s);
+        Invoke();
     }
 }
