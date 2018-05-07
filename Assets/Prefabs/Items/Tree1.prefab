@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47700974e43802241ae7e235f60b1521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EngulfImage: {fileID: 21300000, guid: 8a195a984753d2b4a8fc74635bf3aa2b, type: 3}
   EngulfedEvent: {fileID: 11400000, guid: 2ab590dc1289f4045ad2ddaf8bbdcf00, type: 2}
   Response:
     m_PersistentCalls:

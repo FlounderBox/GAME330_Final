@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class WatchItemDisplay : MonoBehaviour {
 
-    private void Awake()
-    {
-
-    }
+    public float MovementMod = 1;
 
     private void Update()
     {
@@ -25,7 +22,7 @@ public class WatchItemDisplay : MonoBehaviour {
         _itemImage.transform.localScale = Vector2.one * 0.25f;
         _itemImage.AddComponent<Image>();
         _itemImage.AddComponent<WatchItem>();
-        Decay.AddDecay(_itemImage, 3f);
+        Decay.AddDecay(_itemImage, 6f);
         _itemImage.GetComponent<RectTransform>().anchoredPosition = RandomPositionOutsideCanvas();
         return _itemImage;
     }
@@ -47,7 +44,6 @@ public class WatchItemDisplay : MonoBehaviour {
 public class WatchItem: MonoBehaviour
 {
     RectTransform rectTransform;
-
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -55,10 +51,11 @@ public class WatchItem: MonoBehaviour
         {
             Destroy(gameObject);
         }
+        rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
 
     }
     private void Update()
     {
-        rectTransform.anchoredPosition = Vector3.Lerp(rectTransform.anchoredPosition, Vector2.zero, Time.deltaTime);
+        rectTransform.anchoredPosition = Vector3.Lerp(rectTransform.anchoredPosition, Vector2.zero, Time.deltaTime * 0.25f);
     }
 }
