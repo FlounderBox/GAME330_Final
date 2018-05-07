@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4322086394612156}
   - component: {fileID: 33017809076232188}
   - component: {fileID: 23134548578348832}
-  - component: {fileID: 95017672760926654}
   - component: {fileID: 64360247948588540}
   - component: {fileID: 114087662976096594}
   m_Layer: 0
@@ -99,23 +98,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: bcb0f79f86fdf6e45b35ac80d95679df, type: 3}
---- !u!95 &95017672760926654
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1631540950594850}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bcb0f79f86fdf6e45b35ac80d95679df, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114087662976096594
 MonoBehaviour:
   m_ObjectHideFlags: 1

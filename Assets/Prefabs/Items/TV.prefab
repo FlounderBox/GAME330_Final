@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4962528523767042}
   - component: {fileID: 33474436489602572}
   - component: {fileID: 23603848068632766}
-  - component: {fileID: 95824013039148744}
   - component: {fileID: 64891331171148816}
   - component: {fileID: 114999302604298588}
   - component: {fileID: 82833904394565466}
@@ -180,23 +179,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95824013039148744
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359805080210414}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c33f8d7e647a3214c9aaa6ccdd7c386a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114999302604298588
 MonoBehaviour:
   m_ObjectHideFlags: 1

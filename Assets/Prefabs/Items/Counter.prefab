@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4361181613073154}
   - component: {fileID: 33402856260114402}
   - component: {fileID: 23877989290257598}
-  - component: {fileID: 95120514193623944}
   - component: {fileID: 65651967597918532}
   - component: {fileID: 114533545245647768}
   m_Layer: 0
@@ -97,23 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 45.261852, y: 46.786575, z: 47.313038}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &95120514193623944
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1705527072605602}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d6aef2a4dc29cc44b9d2f57a5a8f87af, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114533545245647768
 MonoBehaviour:
   m_ObjectHideFlags: 1
