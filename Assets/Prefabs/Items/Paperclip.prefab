@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4191317762428216}
   - component: {fileID: 33115328299661084}
   - component: {fileID: 23401185994378430}
+  - component: {fileID: 65028179373211698}
+  - component: {fileID: 114505554827546366}
   m_Layer: 0
   m_Name: Paperclip
   m_TagString: Untagged
@@ -34,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162641556932690}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.67050785, y: -0.22454228, z: -0.22454222, w: 0.6705079}
+  m_LocalPosition: {x: 4.1779375, y: 1.00127, z: 3.3875556}
   m_LocalScale: {x: 2.54, y: 2.540001, z: 2.540001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -37.030003}
 --- !u!23 &23401185994378430
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,3 +84,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162641556932690}
   m_Mesh: {fileID: 4300000, guid: 6ca17b24b593e7f4e98a8654fdf65cb3, type: 3}
+--- !u!65 &65028179373211698
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162641556932690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.081781626, y: 0.0177309, z: 0.0010000019}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114505554827546366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162641556932690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47700974e43802241ae7e235f60b1521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EngulfImage: {fileID: 21300000, guid: 507eb5c5c6f97c347a9e0907a8356e86, type: 3}
+  EngulfedEvent: {fileID: 11400000, guid: 2ab590dc1289f4045ad2ddaf8bbdcf00, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null

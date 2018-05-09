@@ -65,7 +65,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _HighlightLength: 0.2952151
-    - _HighlightOpacity: 0.6735141
+    - _HighlightOpacity: 1
     - _LightBlend: 1
     - _Metallic: 0
     - _Mode: 0

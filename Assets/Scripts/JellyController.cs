@@ -15,7 +15,7 @@ public class JellyController : MonoBehaviour
     private Vector3 prevEyeRotation;
     float UnitScore;
 
-    bool controllable = true;
+    public bool Controllable = true;
 
     private void Start()
     {
@@ -34,15 +34,15 @@ public class JellyController : MonoBehaviour
     public void EnableControls(bool pBool)
     {
         if (pBool)
-            controllable = true;
+            Controllable = true;
         else
-            controllable = false;
+            Controllable = false;
     }
 
     private void Update()
     {
         RotateEyes();
-        if (controllable)
+        if (Controllable)
         {
             Movement();
         }

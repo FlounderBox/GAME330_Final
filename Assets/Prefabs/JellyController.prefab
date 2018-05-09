@@ -311,6 +311,7 @@ MonoBehaviour:
   Score: 0.2
   ScalePercentage: 0.0125
   BreakForce: 75
+  Controllable: 1
 --- !u!114 &114800097410403136
 MonoBehaviour:
   m_ObjectHideFlags: 1
