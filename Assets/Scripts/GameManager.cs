@@ -12,35 +12,26 @@ public class GameManager : MonoBehaviour
 
     public float GameTime = 240;
 
-    enum GameState
+    public enum GameState
     {
+        None,
         Start,
         Active,
         Pause,
         End
     }
 
-    GameState currentState = GameState.Start;
+    GameState currentState = GameState.None;
 
-    public static float GameTimer
-    {
-        get
-        {
-            return GameObject.FindObjectOfType<GameManager>().gameTimer;
-        }
-    }
-    private float gameTimer;
 
     private void Awake()
     {
-        gameTimer = GameTime;
-        ChangeGameState(GameState.Active);
+        //ChangeGameState(GameState.Active);
     }
 
     public void StartGame()
     {
         ChangeGameState(GameState.Active);
-        gameTimer = GameTime;
         GameStartEvent.Raise();
     }
 
@@ -52,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        if (currentState == GameState.Active)
+        if (currentState != GameState.Pause)
             ChangeGameState(GameState.Pause);
         else if (currentState == GameState.Pause)
             ChangeGameState(GameState.Active);
@@ -90,18 +81,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
-        }
-
-        if (currentState == GameState.Active)
-        {
-            if (gameTimer >= 0)
-            {
-                gameTimer -= Time.deltaTime;
-            }
-            else
-            {
-                EndGame();
-            }
         }
     }
 }
