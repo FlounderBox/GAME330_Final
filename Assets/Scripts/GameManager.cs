@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    public GameEvent FadeInEvent;
+    public GameEvent FadeOutEvent;
+    public GameEvent GameInitEvent;
     public GameEvent GameStartEvent;
     public GameEvent GameEndEvent;
     public GameEvent GamePauseEvent;
     public GameEvent GameActiveEvent;
+    public GameEvent CleanupEvent;
 
-    public float GameTime = 240;
+    public int[] SceneIndexes;
 
     public enum GameState
     {
         None,
+        Init,
         Start,
         Active,
         Pause,
@@ -24,21 +28,20 @@ public class GameManager : MonoBehaviour
     GameState currentState = GameState.None;
 
 
-    private void Awake()
+    private void Start()
     {
-        //ChangeGameState(GameState.Active);
+        ChangeGameState(GameState.Init);
     }
 
     public void StartGame()
     {
-        ChangeGameState(GameState.Active);
         GameStartEvent.Raise();
+        ChangeGameState(GameState.Active);
     }
 
     public void EndGame()
     {
         ChangeGameState(GameState.End);
-        GameEndEvent.Raise();
     }
 
     public void PauseGame()
@@ -48,22 +51,56 @@ public class GameManager : MonoBehaviour
         else if (currentState == GameState.Pause)
             ChangeGameState(GameState.Active);
     }
+    public void PauseGame(bool bPause)
+    {
+        if (bPause)
+            ChangeGameState(GameState.Pause);
+        else
+            ChangeGameState(GameState.Active);
+    }
+
+    void LoadAttic()
+    {
+        SimonMenu.ClearSimonButtons();
+        Time.timeScale = 1;
+        FadeOutEvent.Raise();
+    }
+
+    void ReloadScene()
+    {
+        SimonMenu.ClearSimonButtons();
+        Time.timeScale = 1;
+        FadeOutEvent.Raise();
+    }
 
     void ChangeGameState(GameState gameState)
     {
         if (currentState == gameState) return;
-        Debug.Log("Changing to " + gameState.ToString());
+        //Debug.Log("Changing to " + gameState.ToString());
         switch (gameState)
         {
+            case GameState.Init:
+                SimonMenu.ClearSimonButtons();
+                GameInitEvent.Raise();
+                currentState = GameState.Init;
+                return;
             case GameState.Start:
+                GameStartEvent.Raise();
                 currentState = GameState.Start;
                 return;
             case GameState.Active:
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LL, PauseGame);
                 Time.timeScale = 1;
                 GameActiveEvent.Raise();
                 currentState = GameState.Active;
                 return;
             case GameState.Pause:
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, LoadAttic);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, ReloadScene);
                 GamePauseEvent.Raise();
                 Time.timeScale = 0;
                 currentState = GameState.Pause;
@@ -78,9 +115,5 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
     }
 }

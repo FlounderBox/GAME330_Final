@@ -19,23 +19,24 @@ public class ScreenFader : MonoBehaviour {
         Graphics.Blit(source, destination, fadeMaterial);
     }
 
-    private void Start()
+    private void Awake()
     {
-        FadeIn(3);
+        //FadeIn(3);
+        currentFade = 1f;
     }
 
-    public void FadeIn(int pSeconds)
+    public void FadeIn(float pSeconds)
     {
         fadeAmount = 1f / pSeconds * Time.deltaTime;
-        Debug.Log(Time.deltaTime);
         currentFade = 0f;
         fadeIn = true;
         fadeComplete = false;
     }
 
-    public void FadeOut(int pSeconds)
+    public void FadeOut(float pSeconds)
     {
         fadeAmount = 1f / pSeconds * Time.deltaTime;
+        Debug.Log(pSeconds + " " + fadeAmount);
         currentFade = 1f;
         fadeIn = false;
         fadeComplete = false;

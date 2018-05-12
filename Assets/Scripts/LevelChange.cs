@@ -5,19 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelChange : MonoBehaviour {
 
-    public int NextSceneIndex;
-    public GameEvent FadeOutEvent;
-
-    private void OnTriggerEnter(Collider other)
+    public void ChangeScene(float pBuildIndex)
     {
-        if (other.tag == "Player")
+        int intIndex = Mathf.CeilToInt(pBuildIndex);
+        Time.timeScale = 1;
+        if (SceneManager.GetSceneAt(intIndex) == null)
         {
-            FadeOutEvent.Raise();
+            Debug.LogError("Build index" + pBuildIndex + " is invalid.");
+            return;
         }
+        SceneManager.LoadScene(intIndex);
+        return;
     }
 
-    public void ChangeScene()
+    public void ReloadScene()
     {
-        SceneManager.LoadScene(NextSceneIndex);
+        ChangeScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public static int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 }

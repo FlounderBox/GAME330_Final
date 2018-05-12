@@ -35,7 +35,7 @@ public class GameTimer : MonoBehaviour
         {
             if (isRunning)
             {
-                if (timer >= 0)
+                if (timer > 0)
                     timer -= Time.deltaTime;
                 else
                 {
