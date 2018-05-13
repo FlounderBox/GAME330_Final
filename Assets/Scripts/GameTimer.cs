@@ -39,6 +39,7 @@ public class GameTimer : MonoBehaviour
                     timer -= Time.deltaTime;
                 else
                 {
+                    isComplete = true;
                     TimerCompleteEvent.Raise();
                 }
             }

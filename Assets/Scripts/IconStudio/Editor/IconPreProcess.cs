@@ -10,7 +10,7 @@ public class IconPreProcess : AssetPostprocessor {
         var _texture = (TextureImporter)assetImporter;
         if (_texture != null)
         {
-            if (assetPath.Contains("Icons"))
+            if (assetPath.Contains("Materials/Icons"))
             {
                 _texture.textureType = TextureImporterType.Sprite;
             }

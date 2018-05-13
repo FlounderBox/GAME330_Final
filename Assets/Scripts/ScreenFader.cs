@@ -36,7 +36,6 @@ public class ScreenFader : MonoBehaviour {
     public void FadeOut(float pSeconds)
     {
         fadeAmount = 1f / pSeconds * Time.deltaTime;
-        Debug.Log(pSeconds + " " + fadeAmount);
         currentFade = 1f;
         fadeIn = false;
         fadeComplete = false;

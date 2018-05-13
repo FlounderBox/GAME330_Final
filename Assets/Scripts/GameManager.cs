@@ -62,15 +62,20 @@ public class GameManager : MonoBehaviour
     void LoadAttic()
     {
         SimonMenu.ClearSimonButtons();
-        Time.timeScale = 1;
-        FadeOutEvent.Raise();
+        StartCoroutine(WaitUntilTimeResume(FadeOutEvent.Raise));
     }
+   
 
     void ReloadScene()
     {
         SimonMenu.ClearSimonButtons();
+        StartCoroutine(WaitUntilTimeResume(FadeOutEvent.Raise));
+    }
+    IEnumerator WaitUntilTimeResume(SimonMenu.SimonButton pMethod)
+    {
         Time.timeScale = 1;
-        FadeOutEvent.Raise();
+        yield return new WaitUntil(() => Time.deltaTime > 0f);
+        pMethod.Invoke();
     }
 
     void ChangeGameState(GameState gameState)
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.Start;
                 return;
             case GameState.Active:
+                SimonMenu.ClearSimonButtons();
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, PauseGame);
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, PauseGame);
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, PauseGame);
@@ -98,9 +104,10 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.Active;
                 return;
             case GameState.Pause:
+                SimonMenu.ClearSimonButtons();
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, PauseGame);
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, LoadAttic);
-                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, ReloadScene);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, ReloadScene);
                 GamePauseEvent.Raise();
                 Time.timeScale = 0;
                 currentState = GameState.Pause;

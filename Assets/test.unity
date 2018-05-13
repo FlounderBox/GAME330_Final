@@ -956,7 +956,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: Resume
 --- !u!222 &80442344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2964,7 +2964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: 
 --- !u!222 &457139406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9643,12 +9643,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634833031}
         m_MethodName: FadeIn
-        m_Mode: 3
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
+          m_IntArgument: 0
+          m_FloatArgument: 3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -9681,12 +9681,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634833031}
         m_MethodName: FadeOut
-        m_Mode: 3
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
+          m_IntArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -10532,8 +10532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1000214, y: 58.000305}
-  m_SizeDelta: {x: 241.6, y: 67.1}
+  m_AnchoredPosition: {x: -1.1, y: 94.9}
+  m_SizeDelta: {x: 507.5, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780238764
 MonoBehaviour:
@@ -10567,7 +10567,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: 'Quit to
+
+    Menu'
 --- !u!222 &1780238765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11521,17 +11523,6 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 135174359}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2051895250}
         m_MethodName: SetActive
         m_Mode: 6
@@ -12156,7 +12147,7 @@ GameObject:
   - component: {fileID: 2039488994}
   - component: {fileID: 2039488993}
   m_Layer: 5
-  m_Name: PausePanel
+  m_Name: MenuPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
