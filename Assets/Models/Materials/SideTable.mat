@@ -24,7 +24,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _HighlightLength: 0.2952151
-    - _HighlightOpacity: 0.6735141
+    - _HighlightOpacity: 1
     - _ShadowLength: 0.4068593
     - _ShadowOpacity: 0
     m_Colors:
