@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameEvent GamePauseEvent;
     public GameEvent GameActiveEvent;
     public GameEvent CleanupEvent;
+
+    int nextLevelSceneIndex;
 
     public int[] SceneIndexes;
 
@@ -61,12 +64,22 @@ public class GameManager : MonoBehaviour
 
     void LoadAttic()
     {
-        SimonMenu.ClearSimonButtons();
-        StartCoroutine(WaitUntilTimeResume(FadeOutEvent.Raise));
+        nextLevelSceneIndex = 0;
+        StartSceneTransition();
     }
-   
 
     void ReloadScene()
+    {
+        nextLevelSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        StartSceneTransition();
+    }
+
+    public void LoadLoadedScene()
+    {
+        SceneManager.LoadScene(nextLevelSceneIndex);
+    }
+
+    void StartSceneTransition()
     {
         SimonMenu.ClearSimonButtons();
         StartCoroutine(WaitUntilTimeResume(FadeOutEvent.Raise));
@@ -105,14 +118,18 @@ public class GameManager : MonoBehaviour
                 return;
             case GameState.Pause:
                 SimonMenu.ClearSimonButtons();
-                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LL, PauseGame);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, PauseGame);
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, LoadAttic);
-                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, ReloadScene);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, ReloadScene);
                 GamePauseEvent.Raise();
                 Time.timeScale = 0;
                 currentState = GameState.Pause;
                 return;
             case GameState.End:
+                SimonMenu.ClearSimonButtons();
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, LoadAttic);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, ReloadScene);
                 GameEndEvent.Raise();
                 currentState = GameState.End;
                 return;
