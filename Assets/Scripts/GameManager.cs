@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
             case GameState.End:
                 SimonMenu.ClearSimonButtons();
                 SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UR, LoadAttic);
-                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_LR, ReloadScene);
+                SimonMenu.SetSimonButtonMethod(SimonXInterface.SimonButtonType.Button_UL, ReloadScene);
                 GameEndEvent.Raise();
                 currentState = GameState.End;
                 return;

@@ -14,7 +14,6 @@ public class GameEvent : ScriptableObject
         //Debug.Log("Raised " + name);
         for (int i = 0; i < gameEventListeners.Count; i++)
         {
-            //Debug.Log("Raised " + name + " on " + gameEventListeners[i].gameObject.name);
             gameEventListeners[i].Invoke();
         }
     }
@@ -23,6 +22,7 @@ public class GameEvent : ScriptableObject
     {
         for (int i = 0; i < gameEventListeners.Count; i++)
         {
+            Debug.Log("Raised " + name + " on " + gameEventListeners[i].gameObject.name);
             gameEventListeners[i].Invoke();
             gameEventListeners[i].Invoke(f);
         }
