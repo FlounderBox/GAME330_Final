@@ -19,9 +19,16 @@ public class GameTimer : MonoBehaviour
 
     public void StartTimer()
     {
-        timer = StartTime;
-        isRunning = true;
-        isComplete = false;
+        if (StartTime != 0)
+        {
+            timer = StartTime;
+            isRunning = true;
+            isComplete = false;
+        }
+        else
+        {
+            isComplete = true;
+        }
     }
 
     public void PauseTimer(bool pPause)

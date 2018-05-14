@@ -68,6 +68,12 @@ public class GameManager : MonoBehaviour
         StartSceneTransition();
     }
 
+    public void LoadLevel(float pBuildIndex)
+    {
+        nextLevelSceneIndex = Mathf.RoundToInt(pBuildIndex);
+        StartSceneTransition();
+    }
+
     void ReloadScene()
     {
         nextLevelSceneIndex = SceneManager.GetActiveScene().buildIndex;
